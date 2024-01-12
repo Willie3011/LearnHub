@@ -20,7 +20,6 @@ body{
     font-family: 'Montserrat', sans-serif;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 
 header{
@@ -135,6 +134,11 @@ nav .buttons button:last-child:hover a{
     color: white;
     text-align: center;
     padding: 100px 0; /* Adjust the padding as needed */
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .hero h1 {
@@ -159,7 +163,7 @@ nav .buttons button:last-child:hover a{
 }
 
 .cta-button:hover {
-    background-color: #45a049;
+    background-color: var(--primary-color);
 }
 
 .about{
@@ -186,6 +190,72 @@ nav .buttons button:last-child:hover a{
     max-width: 500px;
     text-align: left;
     line-height: 1.85rem;
+}
+
+.featuredTutors{
+    padding: 50px 5%;
+}
+
+.featuredTutors .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.featuredTutors .tutor{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0, 0.5);
+    overflow: hidden;
+}
+
+.featuredTutors .tutor img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.featuredTutors .tutor .name{
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #181717;
+}
+
+.tutor .info{
+    padding: 1rem;
+}
+
+.tutor .info .subject{
+    color: var(--mute-text);
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 1.3px;
+}
+
+.tutor .info .rating{
+    margin-top: 0.4rem;
+    color: gray;
+    text-align: end;
+}
+
+.tutor button{
+    padding: 10px 15px;
+    background: var(--secondary-color);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    align-self: flex-start;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.tutor button:hover{
+    background: var(--primary-color);
 }
 
 @media  screen and (max-width: 1024px) {
