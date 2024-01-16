@@ -14,11 +14,13 @@
     text-decoration: none;
     border: none;
     outline: none;
+    list-style: none;
     box-sizing: border-box;
 }
 
 body{
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;
 }
@@ -47,18 +49,30 @@ header nav{
     display: flex;
     align-items: center;
     position: relative;
+    transition: all 0.5s ease-in-out;
 }
 
-nav a{
-    color: var(--text-color);
-    font-weight: 400;
+nav ul{
+    display: flex;
+}
+
+nav ul li{
     padding: 10px 15px;
     border-radius: 5px;
+}
+
+nav ul li a{
+    font-weight: 400;
+    color: var(--text-color);
     transition: all 0.2s ease-in;
 }
 
-nav a:hover{
+nav ul li:hover {
     background: var(--text-color);
+    
+}
+
+nav ul li:hover a{
     color: var(--white);
 }
 
@@ -279,10 +293,19 @@ nav .buttons button:last-child:hover a{
         padding: 1rem;
     }
     
-    nav a{
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    nav ul li{
+        margin: 10px;
         width: 100%;
         text-align: center;
-        
+    }
+
+    nav a{
+        text-align: center;
     }
 
     nav .buttons{
@@ -293,7 +316,7 @@ nav .buttons button:last-child:hover a{
         margin: 0;
         padding: 0;
     }
-
+    
     nav .buttons button{
         width: 100%;
     }
@@ -302,5 +325,10 @@ nav .buttons button:last-child:hover a{
 @media screen and (max-width: 768px) {
     header nav{
         width: 90%;
+        min-height: 200px;
+    }
+
+    .featuredTutors {
+        margin:0 auto;
     }
 }
