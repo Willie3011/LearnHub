@@ -5,6 +5,7 @@
     --secondary-color: #86aa32;
     --white:#fff;
     --text-color: #0a0a0a;
+    --text-dark: #333333;
     --mute-text: #777;
 }
 
@@ -140,15 +141,13 @@ nav .buttons button:last-child:hover a{
     margin-bottom: 6px;
 }
 
-/* Update your styles.css file with the following code */
-
 .hero {
-    background-image: url('/Images/hero.jpg'); /* Replace with your actual image path */
+    background-image: url('/Images/hero.jpg'); 
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 0; /* Adjust the padding as needed */
+    padding: 100px 0; 
     height: 450px;
     display: flex;
     align-items: center;
@@ -194,7 +193,7 @@ nav .buttons button:last-child:hover a{
     text-align: center;
     font-size: 2em;
     color: var(--text-color);
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
 }
 
 .heading span{
@@ -215,7 +214,7 @@ nav .buttons button:last-child:hover a{
 .featuredTutors .container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .featuredTutors .tutor{
@@ -223,7 +222,7 @@ nav .buttons button:last-child:hover a{
     align-items: center;
     flex-direction: column;
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 10px 4px rgba(0,0,0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0,0,0, 0.4);
     overflow: hidden;
 }
 
@@ -244,7 +243,7 @@ nav .buttons button:last-child:hover a{
 }
 
 .tutor .info .subject{
-    color: var(--mute-text);
+    color: var(--text-dark);
     text-align: center;
     line-height: 25px;
     letter-spacing: 1.3px;
@@ -274,7 +273,88 @@ nav .buttons button:last-child:hover a{
     background: var(--primary-color);
 }
 
+.testimonies
+{
+    display: flex;
+    background: rgb(233, 231, 231);
+}
 
+.testimonies .container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+}
+
+.left-container h1{
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.left-container p{
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.left-container button{
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background: var(--secondary-color);
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.right-container{
+    display: grid;
+    gap: 2rem;  
+}
+
+.card{
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.card img{
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card-content{
+    display: flex;
+    gap: 1rem;
+}
+
+.card-content span i{
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.card-details p
+{
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.card-details h4{
+    text-align: right;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
 
 
 @media  screen and (max-width: 1024px) {
@@ -324,9 +404,23 @@ nav .buttons button:last-child:hover a{
     nav .buttons button{
         width: 100%;
     }
+
+    .testimonies .container{
+        gap: 3rem;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width < 900px) {
+    .testimonies .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .right-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (width < 750px) {
     header nav{
         width: 90%;
         min-height: 200px;
@@ -334,5 +428,9 @@ nav .buttons button:last-child:hover a{
 
     .featuredTutors {
         margin:0 auto;
+    }
+
+    .right-container{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
