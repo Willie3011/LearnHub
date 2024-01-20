@@ -347,6 +347,57 @@ nav .buttons button:last-child:hover a{
 }
 
 
+.faq {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 50px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .Faq-item{
+    max-width: 700px;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    cursor: pointer;
+}
+
+.Faq-item .question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Faq-item .question h3{
+    font-size: 1.6rem;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out;
+}
+
+.Faq-item .answer{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.Faq-item.active .answer{
+    max-height: 300px;
+}
+
+.Faq-item.active i{
+    transform: rotate(-180deg);
+}
+
+.Faq-item i{
+    transition: transform 0.5s ease-in;
+}
+
 @media  screen and (max-width: 1024px) {
     .burger-menu{
         display: block;
