@@ -190,6 +190,26 @@ nav .buttons button:last-child:hover a{
     color: var(--secondary-color);
 }
 
+.about .container{
+    display: flex;
+}
+
+.about .container .left{
+    flex: 1;
+}
+
+.about .container .right{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.about .container .left img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .about p{
     max-width: 600px;
     text-align: left;
@@ -553,6 +573,10 @@ footer .logo span{
 
     .right-container{
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about .container{
+        flex-direction: column;
     }
 }
 
