@@ -513,7 +513,7 @@ footer .logo span{
 }
 
 
-@media  screen and (max-width: 1024px) {
+@media  screen and (width < 1024px) {
     .burger-menu{
         display: block;
     }
@@ -528,7 +528,7 @@ footer .logo span{
         display: flex;
         flex-direction: column;
         background: var(--white);
-        right: 10px;
+        right: 20px;
         top: 4.5rem;
         padding: 1rem;
     }
@@ -580,9 +580,10 @@ footer .logo span{
     }
 }
 
-@media screen and (width < 750px) {
-    header nav{
+@media screen and (width < 769px) {
+    header nav.active{
         width: 90%;
+        right: 20px;
         min-height: 200px;
     }
 
@@ -592,5 +593,13 @@ footer .logo span{
 
     .right-container{
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (width < 500px){
+    header nav.active{
+        width: 90%;
+        right: 20px;
+        min-height: 200px;
     }
 }
