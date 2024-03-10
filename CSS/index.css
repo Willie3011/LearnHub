@@ -30,16 +30,17 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 5%;
+    padding: 10px 5%;
+    height: 60px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
     background: var(--white);
-    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.15);
     
 }
 
 header .logo{
     font-size: 24px;
     color: var(--text-color);
-    font-weight: 900;
+    font-weight: 600;
 }
 
 header .logo span{
@@ -125,11 +126,13 @@ nav .buttons button:last-child:hover a{
 
 .burger-menu{
     display: none;
+    background-color: transparent;
     cursor: pointer;
 }
 
-.burger-menu i{
-    font-size: 2.5rem;
+.burger-menu svg{
+    height: 2rem;
+    width: 2rem;
 }
 .hero {
     background-image: url('/Images/hero.jpg'); 
@@ -232,7 +235,7 @@ nav .buttons button:last-child:hover a{
     align-items: center;
     flex-direction: column;
     border-radius: 0.5rem;
-    box-shadow: 5px 5px 10px rgba(0,0,0, 0.4);
+    box-shadow: 2px 2px 4px rgba(0,0,0, 0.1);
     overflow: hidden;
 }
 
@@ -331,7 +334,7 @@ nav .buttons button:last-child:hover a{
     gap: 2rem;
     background-color: var(--white);
     border-radius: 1rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
@@ -479,9 +482,9 @@ footer .logo span{
     color: var(--white);
 }
 
-.quick-links ul li:hover,
 .quick-links ul li a:hover,
-.important-links ul li:hover,
+.quick-links ul li a:hover,
+.important-links ul li a:hover,
 .important-links ul li a:hover{
     color: var(--secondary-color);
     transform: translateX(-5px);
@@ -507,8 +510,8 @@ footer .logo span{
     background-color: var(--secondary-color);
 }
 
-.social-links div a{
-    color: var(--white);
+.social-links div a svg{
+    fill: var(--white);
     font-size: 1.2em;
 }
 
@@ -519,27 +522,33 @@ footer .logo span{
     }
 
     header nav{
-        display: none;
+        top: -100%;
+        position: absolute;
+        transition: 0.3s ease;
     }
 
     header nav.active{
         position: absolute;
-        width: 400px;
+        width: 50%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background: var(--white);
         right: 20px;
-        top: 4.5rem;
+        top: 60px;
         padding: 1rem;
     }
     
     nav ul{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
     
     nav ul li{
-        margin: 10px;
+        margin-bottom: 5px;
         width: 100%;
         text-align: center;
     }
@@ -582,8 +591,8 @@ footer .logo span{
 
 @media screen and (width < 769px) {
     header nav.active{
-        width: 90%;
-        right: 20px;
+        width: 100%;
+        left: 0;
         min-height: 200px;
     }
 
@@ -598,8 +607,8 @@ footer .logo span{
 
 @media screen and (width < 500px){
     header nav.active{
-        width: 90%;
-        right: 20px;
+        width: 100%;
+        left: 0;
         min-height: 200px;
     }
 }
